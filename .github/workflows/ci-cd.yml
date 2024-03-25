@@ -902,7 +902,7 @@ jobs:
       if: always()
       uses: actions/cache/restore@v4
       with:
-        path: ${{ github.workspace }}/.tox/py311/.pytest_cache/v/pytest_ranking_data
+        path: ${{ github.workspace }}/.tox/python/.pytest_cache/v/pytest_ranking_data
         key: pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}
     - name: Run the testing
       run: >-
@@ -917,7 +917,7 @@ jobs:
       if: always()
       uses: actions/cache/save@v4
       with:
-        path: ${{ github.workspace }}/.tox/py311/.pytest_cache/v/pytest_ranking_data
+        path: ${{ github.workspace }}/.tox/python/.pytest_cache/v/pytest_ranking_data
         key: pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}-${{ github.run_id }}
     - name: Produce markdown test summary from JUnit
       if: >-
